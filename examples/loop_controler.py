@@ -23,7 +23,7 @@ def generate_loop(factor):
 
 def extend_loops(file_name, factor=2):
     print("extend_loops")
-    new_file_name = file_name.split('.c')[0] + '_extended' + '.c'
+    new_file_name = file_name #.split('.c')[0] + '_extended' + '.c'
 
     # os.system("cp " + file_name + ' ' + new_file_name)
     cur_id = 0
@@ -55,10 +55,13 @@ def main():
     
     print(sys.argv)
     if len(sys.argv) < 3:
-        print('Format: python loop_factor file1 [ file2 ... ]')
+        print('Format: loop_controler.py loop_factor file1 [ file2 ... ]')
         return 
     factor = sys.argv[1]
     file_names = sys.argv[2:]
+
+    if (int(factor) < 1):
+        return
 
     assert all([ is_file_correct(f) for f in file_names ])
 
