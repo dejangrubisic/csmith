@@ -19,10 +19,8 @@ regex_func_call = re.compile('|'.join(save_list))
 
 
 
-def clean_main_func(file_name):
-    new_file_name = file_name#.split('.c')[0] + '_cleaned' + '.c'
-
-    # os.system("cp " + file_name + ' ' + new_file_name)
+def refactor_main_func(file_name, main_repeat=1):
+    new_file_name = file_name
     cur_id = 0
 
     with open(file_name, 'r') as f_orig:        
@@ -35,14 +33,27 @@ def clean_main_func(file_name):
         cur_id += 1
         if lines[cur_id] == '{\n':
             cur_id += 1
+        
+        
+        # Beginning of Main function
+        # Insert a loop
+        loop_start = "for(int UNIQUE_ITER_1 = 0; UNIQUE_ITER_1 < %s; UNIQUE_ITER_1++){\n"%main_repeat
+        loop_end = "}\n"
+
+        lines.insert(cur_id, loop_start)
+        cur_id += 1
 
         # Delete all lines that are not call to the func_num
-
         while not regex_main_return.search(lines[cur_id]):
             if regex_func_call.search(lines[cur_id]):
                 cur_id += 1
             else:
                 lines.pop(cur_id)
+        
+        # Return of Main function
+        # Close the loop
+        lines.insert(cur_id, loop_end)
+        cur_id += 1
 
             
     with open(new_file_name, 'w') as f_new:
@@ -61,17 +72,18 @@ def is_file_correct(file_name):
 def main():
     
     print(sys.argv)
-    if len(sys.argv) < 2:
-        print('Format: main_cleaner.py file1 [ file2 ... ]')
+    if len(sys.argv) < 3:
+        print('Format: main_controler.py repeat_main file1 [ file2 ... ]')
         return 
 
-    file_names = sys.argv[1:]
-
+    main_repeat = sys.argv[1]
+    file_names = sys.argv[2:]
+    
     assert all([ is_file_correct(f) for f in file_names ])
 
 
     for file_name in file_names:
-        clean_main_func(file_name)
+        refactor_main_func(file_name, main_repeat)
 
 if __name__ == '__main__':
     main()

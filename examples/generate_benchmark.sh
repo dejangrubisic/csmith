@@ -2,8 +2,9 @@
 
 BENCH_DIR=$1
 BENCH_SIZE=$2
-BENCH_LOOP_EXTEND=$3
-BENCH_ARG=${@:4}
+BENCH_MAIN_REPEAT=$3
+BENCH_LOOP_REPEAT=$4
+BENCH_ARG=${@:5}
 
 # echo $BENCH_DIR
 # echo $BENCH_SIZE
@@ -19,6 +20,8 @@ echo csmith $BENCH_ARG
 
 for i in $(seq 1 $BENCH_SIZE); do
     csmith $BENCH_ARG > e_$i.c
-    python $ROOT_DIR/loop_controler.py $BENCH_LOOP_EXTEND e_$i.c
-    python $ROOT_DIR/main_cleaner.py e_$i.c
+    if (($BENCH_LOOP_REPEAT > 1)); then
+        python $ROOT_DIR/loop_controler.py $BENCH_LOOP_REPEAT e_$i.c
+    fi
+    python $ROOT_DIR/main_controler.py $BENCH_MAIN_REPEAT e_$i.c
 done
