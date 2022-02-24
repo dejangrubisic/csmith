@@ -20,7 +20,6 @@ regex_func_call = re.compile('|'.join(save_list))
 
 
 def clean_main_func(file_name):
-    print("Cleaner")
     new_file_name = file_name#.split('.c')[0] + '_cleaned' + '.c'
 
     # os.system("cp " + file_name + ' ' + new_file_name)

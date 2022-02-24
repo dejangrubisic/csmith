@@ -13,7 +13,7 @@ for benchmark in $SOURCE_DIR/*; do
         source_name="${example##*/}"
         exe_name=${source_name%".c"}.exe
         
-        clang -Wno-everything -o $EXE_DIR/$benchmark_name/$exe_name $example
+        clang -O3 -Wno-everything -o $EXE_DIR/$benchmark_name/$exe_name $example
     done
 
 done

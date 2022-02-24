@@ -22,7 +22,6 @@ def generate_loop(factor):
 
 
 def extend_loops(file_name, factor=2):
-    print("extend_loops")
     new_file_name = file_name #.split('.c')[0] + '_extended' + '.c'
 
     # os.system("cp " + file_name + ' ' + new_file_name)
