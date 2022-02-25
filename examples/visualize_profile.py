@@ -44,7 +44,7 @@ def perf_get_counter_values(csv_name: str) -> pd.DataFrame:
                     "metric_value": np.float,
                     })
     
-    new_profile_df = df[["event_name", "counter_value"]]
+    new_profile_df = df[["event_name", "counter_value"]].sort_values('event_name', ignore_index=True)
     return new_profile_df
 
 
@@ -62,10 +62,9 @@ def concatanate_profiles(file_names) -> pd.DataFrame:
         if i == 0:
             all_profiles_df = new_profile_df
         else:
-            if np.all(new_profile_df['event_name'] == new_profile_df['event_name']):                
+            if np.all(new_profile_df['event_name'] == all_profiles_df['event_name']):
                 all_profiles_df = pd.concat([all_profiles_df, new_profile_df['counter_value']], axis=1)
         
-
     return all_profiles_df
 
 
