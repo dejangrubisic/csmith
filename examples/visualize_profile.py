@@ -21,6 +21,9 @@ column_names = [
     "metric_value",
     "metric_unit",
     "metric_unit_1",
+    "metric_unit_2",
+    "metric_unit_3",
+    "metric_unit_4",
 ]
 
 def perf_get_counter_values(csv_name: str) -> pd.DataFrame:
@@ -34,7 +37,6 @@ def perf_get_counter_values(csv_name: str) -> pd.DataFrame:
     df = df[df["counter_value"] != "<not supported>"]
     df = df[df["counter_value"] != "<not counted>"]
     df = df[df["event_name"].notnull()]
-    
     df["counter_variance"] = df["counter_variance"].str.rstrip('%')
 
     df = df.astype({"counter_value": np.float,                 
@@ -56,8 +58,8 @@ def concatanate_profiles(file_names) -> pd.DataFrame:
         new_profile_df = perf_get_counter_values(file_name)
         if new_profile_df.empty:
             continue
-
-        cycles = new_profile_df[new_profile_df['event_name'] == 'cpu-cycles']['counter_value'].values[0]
+        
+        cycles = new_profile_df[new_profile_df['event_name'].str.contains('cpu-cycles')]['counter_value'].values[0]
         new_profile_df['counter_value'] = new_profile_df['counter_value'] / cycles
         if i == 0:
             all_profiles_df = new_profile_df
@@ -83,13 +85,11 @@ def visualize_profiles(all_profiles_df, profile_dir, vis_dir):
     # plt.show()
     plt.savefig(vis_dir + '/' + bench_name +'.histogram.png')
 
-    # pdb.set_trace()
     fig, axs = plt.subplots(nrows=1, ncols=all_profiles_df.shape[0], figsize=(1.2*all_profiles_df.shape[0], 4))
     
     fig.suptitle(bench_name + ' benchmark')
 
     for index, row in all_profiles_df.iterrows():
-        # pdb.set_trace()
         axs[index-1].violinplot(    dataset=list(row[1:].values),
                                     positions=[1],
                                     showmeans=False,
@@ -109,7 +109,6 @@ def is_file_correct(file_name):
 
 
 def get_profile_files(profile_dir):
-    # pdb.set_trace()
     all_files = os.listdir(profile_dir)
     if len(all_files):
         return [ os.path.join(profile_dir, filename) for filename in all_files if filename.endswith('.profile.csv') ]

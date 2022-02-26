@@ -1,0 +1,29 @@
+,,,,,,,# started on Fri Feb 25 15:30:00 2022,# started on Fri Feb 25 15:30:01 2022,# started on Fri Feb 25 15:29:59 2022
+2635,,L1-dcache-load-misses:u,3.25%,745671,100.0,6.67,of all L1-dcache hits,,
+39510,,L1-dcache-loads:u,0.00%,745671,100.0,,,,
+<not supported>,,L1-dcache-prefetches:u,0.00%,0,100.0,,,,
+1084,,L1-icache-load-misses:u,3.72%,745671,100.0,,,,
+<not supported>,,L1-icache-loads:u,0.00%,0,100.0,,,,
+0,,major-faults:u,0.00%,738476,100.0,,,,
+112,,minor-faults:u,0.18%,738476,100.0,,,,
+112,,page-faults:u,0.18%,738476,100.0,,,,
+3,,cache-misses:u,26.09%,740259,100.0,0.075,of all cache refs,,
+3448,,cache-references:u,0.81%,740259,100.0,,,,
+466,,dTLB-load-misses:u,1.76%,743203,100.0,1.18,,of all dTLB cache hits,
+39514,,dTLB-loads:u,0.01%,743203,100.0,,,,
+285,,iTLB-load-misses:u,5.65%,743203,100.0,1318.52,,of all iTLB cache hits,
+22,,iTLB-loads:u,5.20%,743203,100.0,,,,
+0,,duration_time:u,0.00%,744898,100.0,0.0,,,K/sec
+0.74,msec,task-clock:u,1.04%,744898,100.0,0.604,,,CPUs utilized
+263557.0,,cpu-cycles:u,0.78%,747666,100.0,0.354,,,GHz
+156562.0,,instructions:u,0.00%,747666,100.0,0.59,,,insn per cycle
+0,,bpf-output:u,0.00%,744898,100.0,0.0,,,K/sec
+35054,,branch-instructions:u,0.00%,758710,100.0,,,,
+1737,,branch-misses:u,2.01%,758710,100.0,4.96,of all branches,,
+1737,,branch-load-misses:u,2.01%,758710,100.0,,,,
+35054,,branch-loads:u,0.00%,758710,100.0,,,,
+0,,alignment-faults:u,0.00%,745966,100.0,0.0,,,K/sec
+0,,context-switches:u,0.00%,745966,100.0,0.0,,,K/sec
+0.74,msec,cpu-clock:u,0.65%,745966,100.0,0.569,,,CPUs utilized
+0,,cpu-migrations:u,0.00%,745966,100.0,0.0,,,K/sec
+0,,emulation-faults:u,0.00%,745966,100.0,0.0,,,K/sec

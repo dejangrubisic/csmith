@@ -1,0 +1,29 @@
+,,,,,,,# started on Fri Feb 25 15:55:59 2022,# started on Fri Feb 25 15:56:00 2022,# started on Fri Feb 25 15:55:58 2022
+0,,major-faults:u,0.00%,740404,100.0,,,,
+111,,minor-faults:u,0.22%,740404,100.0,,,,
+111,,page-faults:u,0.22%,740404,100.0,,,,
+3,,cache-misses:u,19.61%,742895,100.0,0.076,of all cache refs,,
+3442,,cache-references:u,0.56%,742895,100.0,,,,
+473,,dTLB-load-misses:u,1.18%,751215,100.0,1.2,,of all dTLB cache hits,
+39498,,dTLB-loads:u,0.00%,751215,100.0,,,,
+309,,iTLB-load-misses:u,7.10%,751215,100.0,1237.6,,of all iTLB cache hits,
+25,,iTLB-loads:u,13.27%,751215,100.0,,,,
+35049,,branch-instructions:u,0.00%,740868,100.0,,,,
+1720,,branch-misses:u,2.13%,740868,100.0,4.91,,of all branches,
+1720,,branch-load-misses:u,2.13%,740868,100.0,,,,
+35049,,branch-loads:u,0.00%,740868,100.0,,,,
+0,,alignment-faults:u,0.00%,730703,100.0,0.0,K/sec,,
+0,,context-switches:u,0.00%,730703,100.0,0.0,K/sec,,
+0.73,msec,cpu-clock:u,1.21%,730703,100.0,0.641,CPUs utilized,,
+0,,cpu-migrations:u,0.00%,730703,100.0,0.0,K/sec,,
+0,,emulation-faults:u,0.00%,730703,100.0,0.0,K/sec,,
+0,,duration_time:u,0.00%,738096,100.0,0.0,,,K/sec
+0.74,msec,task-clock:u,1.30%,738096,100.0,0.648,,,CPUs utilized
+261495.0,,cpu-cycles:u,0.49%,740463,100.0,0.354,,,GHz
+156549.0,,instructions:u,0.00%,740463,100.0,0.6,,,insn per cycle
+0,,bpf-output:u,0.00%,738096,100.0,0.0,,,K/sec
+2719,,L1-dcache-load-misses:u,0.38%,727082,100.0,6.88,,of all L1-dcache hits,
+39501,,L1-dcache-loads:u,0.00%,727082,100.0,,,,
+<not supported>,,L1-dcache-prefetches:u,0.00%,0,100.0,,,,
+1029,,L1-icache-load-misses:u,1.58%,727082,100.0,,,,
+<not supported>,,L1-icache-loads:u,0.00%,0,100.0,,,,

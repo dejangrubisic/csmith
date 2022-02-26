@@ -1,0 +1,29 @@
+,,,,,,,# started on Fri Feb 25 15:42:06 2022,# started on Fri Feb 25 15:42:05 2022,# started on Fri Feb 25 15:42:04 2022
+35058,,branch-instructions:u,0.00%,735494,100.0,,,,
+1671,,branch-misses:u,1.39%,735494,100.0,4.77,of all branches,,
+1671,,branch-load-misses:u,1.39%,735494,100.0,,,,
+35058,,branch-loads:u,0.00%,735494,100.0,,,,
+2556,,L1-dcache-load-misses:u,4.85%,754923,100.0,6.47,,of all L1-dcache hits,
+39503,,L1-dcache-loads:u,0.00%,754923,100.0,,,,
+<not supported>,,L1-dcache-prefetches:u,0.00%,0,100.0,,,,
+1075,,L1-icache-load-misses:u,0.73%,754923,100.0,,,,
+<not supported>,,L1-icache-loads:u,0.00%,0,100.0,,,,
+0,,major-faults:u,0.00%,748704,100.0,,,,
+112,,minor-faults:u,0.00%,748704,100.0,,,,
+112,,page-faults:u,0.00%,748704,100.0,,,,
+2,,cache-misses:u,59.32%,751211,100.0,0.052,,of all cache refs,
+3457,,cache-references:u,0.88%,751211,100.0,,,,
+471,,dTLB-load-misses:u,0.99%,744979,100.0,1.19,of all dTLB cache hits,,
+39505,,dTLB-loads:u,0.00%,744979,100.0,,,,
+275,,iTLB-load-misses:u,3.97%,744979,100.0,936.05,of all iTLB cache hits,,
+29,,iTLB-loads:u,8.58%,744979,100.0,,,,
+0,,alignment-faults:u,0.00%,748064,100.0,0.0,,K/sec,
+0,,context-switches:u,0.00%,748064,100.0,0.0,,K/sec,
+0.75,msec,cpu-clock:u,1.32%,748064,100.0,0.598,,CPUs utilized,
+0,,cpu-migrations:u,0.00%,748064,100.0,0.0,,K/sec,
+0,,emulation-faults:u,0.00%,748064,100.0,0.0,,K/sec,
+0,,duration_time:u,0.00%,785840,100.0,0.0,,,K/sec
+0.79,msec,task-clock:u,3.19%,785840,100.0,0.617,,,CPUs utilized
+278101.0,,cpu-cycles:u,5.32%,788776,100.0,0.354,,,GHz
+156568.0,,instructions:u,0.00%,788776,100.0,0.56,,,insn per cycle
+0,,bpf-output:u,0.00%,785840,100.0,0.0,,,K/sec

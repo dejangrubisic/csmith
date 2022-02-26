@@ -1,0 +1,29 @@
+,,,,,,,# started on Fri Feb 25 16:09:18 2022,# started on Fri Feb 25 16:09:16 2022,# started on Fri Feb 25 16:09:17 2022,# started on Fri Feb 25 16:09:15 2022
+469,,dTLB-load-misses:u,1.54%,849001,100.0,1.19,of all dTLB cache hits,,,
+39317,,dTLB-loads:u,0.00%,849001,100.0,,,,,
+254,,iTLB-load-misses:u,2.98%,849001,100.0,921.01,of all iTLB cache hits,,,
+28,,iTLB-loads:u,15.82%,849001,100.0,,,,,
+0,,major-faults:u,0.00%,853601,100.0,,,,,
+111,,minor-faults:u,0.22%,853601,100.0,,,,,
+111,,page-faults:u,0.22%,853601,100.0,,,,,
+8,,cache-misses:u,58.10%,860774,100.0,0.225,,of all cache refs,,
+3460,,cache-references:u,0.85%,860774,100.0,,,,,
+0,,alignment-faults:u,0.00%,2275981,100.0,0.0,,K/sec,,
+0,,context-switches:u,0.00%,2275981,100.0,0.0,,K/sec,,
+2.27,msec,cpu-clock:u,10.48%,2275981,100.0,0.122,,CPUs utilized,,
+0,,cpu-migrations:u,0.00%,2275981,100.0,0.0,,K/sec,,
+0,,emulation-faults:u,0.00%,2275981,100.0,0.0,,K/sec,,
+2385,,L1-dcache-load-misses:u,3.65%,848682,100.0,6.07,,,of all L1-dcache hits,
+39314,,L1-dcache-loads:u,0.00%,848682,100.0,,,,,
+<not supported>,,L1-dcache-prefetches:u,0.00%,0,100.0,,,,,
+1060,,L1-icache-load-misses:u,2.82%,848682,100.0,,,,,
+<not supported>,,L1-icache-loads:u,0.00%,0,100.0,,,,,
+0,,duration_time:u,0.00%,2366667,100.0,0.0,,,,K/sec
+2.37,msec,task-clock:u,6.11%,2366667,100.0,0.125,,,,CPUs utilized
+261001.0,,cpu-cycles:u,0.68%,2373566,100.0,0.11,,,,GHz
+156070.0,,instructions:u,0.00%,2373566,100.0,0.6,,,,insn per cycle
+0,,bpf-output:u,0.00%,2366667,100.0,0.0,,,,K/sec
+34896,,branch-instructions:u,0.00%,852260,100.0,,,,,
+1730,,branch-misses:u,1.55%,852260,100.0,4.96,,,of all branches,
+1730,,branch-load-misses:u,1.55%,852260,100.0,,,,,
+34896,,branch-loads:u,0.00%,852260,100.0,,,,,
