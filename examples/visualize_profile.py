@@ -37,13 +37,14 @@ def perf_get_counter_values(csv_name: str) -> pd.DataFrame:
     df = df[df["counter_value"] != "<not supported>"]
     df = df[df["counter_value"] != "<not counted>"]
     df = df[df["event_name"].notnull()]
+
     df["counter_variance"] = df["counter_variance"].str.rstrip('%')
 
-    df = df.astype({"counter_value": np.float,                 
-                    "counter_variance": np.float, 
-                    "counter_runtime": np.float,
-                    "counter_runtime_perc": np.float,
-                    "metric_value": np.float,
+    df = df.astype({"counter_value": float,                 
+                    "counter_variance": float, 
+                    "counter_runtime": float,
+                    "counter_runtime_perc": float,
+                    "metric_value": float,
                     })
     
     new_profile_df = df[["event_name", "counter_value"]].sort_values('event_name', ignore_index=True)
@@ -55,6 +56,7 @@ def concatanate_profiles(file_names) -> pd.DataFrame:
     all_profiles_df = pd.DataFrame()
 
     for i, file_name in enumerate(file_names):
+        print(file_name)
         new_profile_df = perf_get_counter_values(file_name)
         if new_profile_df.empty:
             continue
@@ -78,7 +80,7 @@ def visualize_profiles(all_profiles_df, profile_dir, vis_dir):
     mean_list = []
 
     df_mean = all_profiles_df.iloc[:, 1:].mean(axis=1)
-
+    plt.title(bench_name + ' benchmark')
     plt.bar(all_profiles_df["event_name"], df_mean,  color='g')
     plt.xticks(rotation = 45, fontsize='xx-small')
     plt.tight_layout()

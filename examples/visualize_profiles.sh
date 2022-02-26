@@ -9,4 +9,6 @@ for benchmark in $PROFILE_DIR/*; do
     python $ROOT_DIR/visualize_profile.py $PROFILE_DIR/$benchmark_name $VISUALIZATION_DIR
 done
 
+python $ROOT_DIR/merge_pictures.py $VISUALIZATION_DIR violin.png $VISUALIZATION_DIR/../violin_combined.png
+python $ROOT_DIR/merge_pictures.py $VISUALIZATION_DIR histogram.png $VISUALIZATION_DIR/../histogram_combined.png
 

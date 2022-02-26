@@ -1,0 +1,65 @@
+// Options:   --no-checksum --quiet --concise --max-block-depth 2 --max-array-dim 3 --max-array-len-per-dim 100 --max-expr-complexity 12
+#include "csmith.h"
+
+volatile uint64_t csmith_sink_ = 0;
+
+static long __undefined;
+
+
+
+static int32_t g_2 = 0L;
+static volatile int32_t g_6 = (-3L);
+static int32_t g_7 = 0x420452A2L;
+
+
+
+static uint8_t  func_1(void);
+
+
+
+
+static uint8_t  func_1(void)
+{ 
+    uint8_t l_8 = 0x16L;
+    int16_t l_14 = 1L;
+    for (g_2 = (-10); (g_2 < (-5)); ++g_2)
+    { 
+        int8_t l_5[58] = {3L,0xDAL,0L,0L,0xDAL,3L,0xDAL,0L,0L,0xDAL,3L,0xDAL,0L,0L,0xDAL,3L,0xDAL,0L,0L,0xDAL,3L,0xDAL,0L,0L,0xDAL,3L,0xDAL,0L,0L,0xDAL,3L,0xDAL,0L,0L,0xDAL,3L,0xDAL,0L,0L,0xDAL,3L,0xDAL,0L,0L,0xDAL,3L,0xB7L,0xDAL,0xDAL,0xB7L,0x31L,0xB7L,0xDAL,0xDAL,0xB7L,0x31L,0xB7L,0xDAL};
+        const uint8_t l_13[10][25][1] = {{{250UL},{0UL},{255UL},{0x9EL},{0xDBL},{0x13L},{0x24L},{0xD8L},{0x24L},{0x13L},{0xDBL},{0x9EL},{255UL},{0UL},{250UL},{255UL},{1UL},{0x88L},{0xC0L},{0UL},{0UL},{0x44L},{0x84L},{0xA8L},{3UL}},{{0xA8L},{0x84L},{0x44L},{0UL},{0UL},{0xC0L},{0x88L},{1UL},{255UL},{250UL},{0UL},{255UL},{0x9EL},{0xDBL},{0x13L},{0x24L},{0xD8L},{0x24L},{0x13L},{0xDBL},{0x9EL},{255UL},{0UL},{250UL},{255UL}},{{1UL},{0x88L},{0xC0L},{0UL},{0UL},{0x44L},{0x84L},{0xA8L},{3UL},{0xA8L},{0x84L},{0x44L},{0UL},{0UL},{0xC0L},{0x88L},{1UL},{255UL},{250UL},{0UL},{255UL},{0x9EL},{0xDBL},{0x13L},{0x24L}},{{0xD8L},{0x24L},{0x13L},{0xDBL},{0x9EL},{255UL},{0UL},{250UL},{255UL},{1UL},{0x88L},{0xC0L},{0UL},{0UL},{0x44L},{0x84L},{0xA8L},{3UL},{0xA8L},{0x84L},{0x44L},{0UL},{0UL},{0xC0L},{0x88L}},{{1UL},{255UL},{250UL},{0UL},{255UL},{0x9EL},{0xDBL},{0x13L},{0x24L},{0xD8L},{0x24L},{0x13L},{0xDBL},{0x9EL},{255UL},{0UL},{250UL},{255UL},{1UL},{0x88L},{0xC0L},{0UL},{0UL},{0x44L},{0x84L}},{{0xA8L},{3UL},{0xA8L},{0x84L},{0x44L},{0UL},{0UL},{0xC0L},{0x88L},{1UL},{255UL},{250UL},{0UL},{255UL},{0x9EL},{0xDBL},{0x13L},{0x24L},{0xD8L},{0x24L},{0x13L},{0xDBL},{0x9EL},{255UL},{0UL}},{{250UL},{255UL},{1UL},{0x88L},{0xC0L},{0UL},{0UL},{0x44L},{0x84L},{0xA8L},{3UL},{0xA8L},{0x84L},{0x44L},{0UL},{0UL},{0xC0L},{0x88L},{1UL},{255UL},{250UL},{0UL},{255UL},{0x9EL},{0xDBL}},{{0x13L},{0x24L},{0xD8L},{0x24L},{0x1DL},{255UL},{0x88L},{255UL},{0xA8L},{1UL},{0x0FL},{0x09L},{0x61L},{0x24L},{0x4FL},{250UL},{0UL},{2UL},{0xD8L},{0UL},{0xD8L},{2UL},{0UL},{250UL},{0x4FL}},{{0x24L},{0x61L},{0x09L},{0x0FL},{1UL},{0xA8L},{255UL},{0x88L},{255UL},{0x1DL},{3UL},{0x9EL},{3UL},{0x1DL},{255UL},{0x88L},{255UL},{0xA8L},{1UL},{0x0FL},{0x09L},{0x61L},{0x24L},{0x4FL},{250UL}},{{0UL},{2UL},{0xD8L},{0UL},{0xD8L},{2UL},{0UL},{250UL},{0x4FL},{0x24L},{0x61L},{0x09L},{0x0FL},{1UL},{0xA8L},{255UL},{0x88L},{255UL},{0x1DL},{3UL},{0x9EL},{3UL},{0x1DL},{255UL},{0x88L}}};
+        int i, j, k;
+        for (g_7 = 57; (g_7 >= 23); g_7 -= 1)
+        { 
+            int i;
+            if (l_5[g_7])
+                break;
+        }
+        if (l_8)
+            break;
+        if (l_8)
+            continue;
+        for (l_8 = (-19); (l_8 != 49); l_8 = safe_add_func_int32_t_s_s(l_8, 4))
+        { 
+            int32_t *l_12 = &g_7;
+            int32_t **l_11 = &l_12;
+            (*l_11) = (void*)0;
+            if (l_13[6][15][0])
+                break;
+            if (g_2)
+                break;
+            return g_7;
+        }
+    }
+    return l_14;
+}
+
+
+
+
+
+int main (int argc, char* argv[])
+{
+for(int UNIQUE_ITER_1 = 0; UNIQUE_ITER_1 < 10; UNIQUE_ITER_1++){
+    func_1();
+}
+    return 0;
+}

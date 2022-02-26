@@ -27,7 +27,7 @@ NUM_FUNC_LOW := 2
 CSMITH_DEFAULT_FLAGS := --no-checksum --quiet --concise
 
 # Global Compile parameters
-OPT_FLAGS := -O0
+OPT_FLAGS := -O3
 
 # Auxilary functions
 gen_bench = ./generate_benchmark.sh $@ $(BENCH_SIZE) $(BENCH_MAIN_REPEAT) $(BENCH_LOOP_REPEAT) $(BENCH_ARG) 
