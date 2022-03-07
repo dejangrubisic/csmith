@@ -1,5 +1,5 @@
 # Global Benchmark parameters
-BENCH_SIZE := 100
+BENCH_SIZE := 2
 BENCH_LOOP_REPEAT := -1
 BENCH_MAIN_REPEAT := 10
 
@@ -27,18 +27,19 @@ NUM_FUNC_LOW := 2
 CSMITH_DEFAULT_FLAGS := --no-checksum --quiet --concise
 
 # Global Compile parameters
-OPT_FLAGS := -O3
+OPT_FLAGS := -O0
 
 # Auxilary functions
 gen_bench = ./generate_benchmark.sh $@ $(BENCH_SIZE) $(BENCH_MAIN_REPEAT) $(BENCH_LOOP_REPEAT) $(BENCH_ARG) 
 compile_bench = ./compile_benchmarks.sh $(OPT_FLAGS)
+gen_input = ./gen_input.sh 
 profile_bench = ./profile_benchmarks.sh
 visualize_profiles = ./visualize_profiles.sh
 export ROOT_DIR=$(PWD)
 
 
-BENCHMARKS := branches loops_short loops_long dense_blas_int dense_blas_float sparse_blas_int sparse_blas_float default
-TARGETS := $(BENCHMARKS) compile profile visualize
+BENCHMARKS := #branches loops_short loops_long dense_blas_int dense_blas_float sparse_blas_int sparse_blas_float default
+TARGETS := $(BENCHMARKS) compile gen_input profile visualize
 
 all: $(TARGETS)
 
@@ -163,6 +164,8 @@ default:
 compile: 
 	$(call compile_bench)
 
+gen_input:
+	$(call gen_input)
 
 profile: 
 	$(call profile_bench)
@@ -175,7 +178,7 @@ visualize:
 
 # Clean routines
 clean_all:
-	rm -rf benchmarks
+	rm -rf benchmarks/*
 
 clean_source:
 	rm -rf benchmarks/source

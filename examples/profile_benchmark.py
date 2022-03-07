@@ -98,10 +98,10 @@ def run_command(cmd: List[str], timeout: int):
     return stdout
 
 
-def run_perf(csv_path_tmp, exe_path, event_group):
+def run_perf(csv_path_tmp, exe_args_list, event_group):
     event_group_cmd = '-e '+ ','.join(event_group)
     
-    cmd = 'perf stat -o %s "-x" "," -r 5 %s %s'%(csv_path_tmp, event_group_cmd, exe_path)    
+    cmd = 'perf stat -o %s "-x" "," -r 5 %s %s'%(csv_path_tmp, event_group_cmd, " ".join(exe_args_list))    
     print(cmd)
     os.system(cmd)
 
@@ -115,14 +115,15 @@ def concatanate_csv(tempdir, final_csv_path):
     else:
         print("No profiles to concatanate")
 
-def profile_benchmark(final_csv_path, exe_path):
+def profile_benchmark(final_csv_path, exe_args_list):
+    exe_path = exe_args_list[0]
 
     with tempfile.TemporaryDirectory() as tempdir:
         raw_exe_name = exe_path.split('/')[-1].rstrip('.exe')
         
         for i, event_group in enumerate(event_list):
             csv_path_tmp = tempdir + '/' + raw_exe_name + '.profile_%d.csv'%i        
-            run_perf(csv_path_tmp, exe_path, event_group)
+            run_perf(csv_path_tmp, exe_args_list, event_group)
 
         concatanate_csv(tempdir, final_csv_path)
 
@@ -131,13 +132,14 @@ def main():
     
     print(sys.argv)
     if len(sys.argv) != 3:
-        print('Format: profile_benchmark.py csv_path exe_path')
+        print('Format: profile_benchmark.py csv_path "exe_path+args" ')
         return 
 
     csv_path = sys.argv[1]
-    exe_path = sys.argv[2]
-
-    profile_benchmark(csv_path, exe_path)
+    exe_args_str = sys.argv[2]
+    exe_args_list = exe_args_str.split(" ")
+    
+    profile_benchmark(csv_path, exe_args_list)
 
 if __name__ == '__main__':
     main()

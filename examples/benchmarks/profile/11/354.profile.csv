@@ -1,0 +1,29 @@
+,,,,,,,# started on Fri Mar  4 10:17:35 2022
+19566.0,,L1-dcache-load-misses,5.26%,422589,100.0,3.01,of all L1-dcache accesses
+650372.0,,L1-dcache-loads,0.36%,422589,100.0,,
+10515.0,,L1-dcache-prefetches,12.67%,422589,100.0,,
+5439.0,,L1-icache-load-misses,0.84%,422589,100.0,1.38,of all L1-icache accesses
+394102.0,,L1-icache-loads,0.37%,422589,100.0,,
+791.0,,dTLB-load-misses,3.63%,425906,100.0,23.92,of all dTLB cache accesses
+3306.0,,dTLB-loads,2.20%,425906,100.0,,
+103.0,,iTLB-load-misses,1.32%,425906,100.0,638.27,of all iTLB cache accesses
+16.0,,iTLB-loads,11.28%,425906,100.0,,
+311691.0,,branch-instructions,0.31%,418060,100.0,,
+7720.0,,branch-misses,1.94%,418060,100.0,2.48,of all branches
+7720.0,,branch-load-misses,1.94%,418060,100.0,,
+311745.0,,branch-loads,0.31%,418060,100.0,,
+0.0,,major-faults,0.00%,426364,100.0,,
+53.0,,minor-faults,1.29%,426364,100.0,,
+53.0,,page-faults,1.29%,426364,100.0,,
+23757.0,,cache-misses,3.03%,426880,100.0,23.265,of all cache refs
+102115.0,,cache-references,2.00%,426880,100.0,,
+1156423.0,ns,duration_time,6.40%,1156422,100.0,2339.088,M/sec
+0.49,msec,task-clock,9.51%,494390,100.0,0.428,CPUs utilized
+1456120.0,,cpu-cycles,6.43%,495942,100.0,2.945,GHz
+1533036.0,,instructions,0.23%,495942,100.0,1.05,insn per cycle
+0.0,,bpf-output,0.00%,494390,100.0,0.0,K/sec
+0.0,,alignment-faults,0.00%,388486,100.0,0.0,K/sec
+0.0,,context-switches,0.00%,388486,100.0,0.0,K/sec
+0.39,msec,cpu-clock,5.03%,388486,100.0,0.427,CPUs utilized
+0.0,,cpu-migrations,0.00%,388486,100.0,0.0,K/sec
+0.0,,emulation-faults,0.00%,388486,100.0,0.0,K/sec

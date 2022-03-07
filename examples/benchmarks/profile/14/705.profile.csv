@@ -1,0 +1,29 @@
+,,,,,,,# started on Fri Mar  4 10:48:10 2022
+0.0,,alignment-faults,0.00%,454182,100.0,0.0,K/sec
+0.0,,context-switches,0.00%,454182,100.0,0.0,K/sec
+0.45,msec,cpu-clock,6.55%,454182,100.0,0.469,CPUs utilized
+0.0,,cpu-migrations,0.00%,454182,100.0,0.0,K/sec
+0.0,,emulation-faults,0.00%,454182,100.0,0.0,K/sec
+0.0,,major-faults,0.00%,436324,100.0,,
+53.0,,minor-faults,0.70%,436324,100.0,,
+53.0,,page-faults,0.70%,436324,100.0,,
+23226.0,,cache-misses,1.34%,436526,100.0,24.308,of all cache refs
+95549.0,,cache-references,4.38%,436526,100.0,,
+802.0,,dTLB-load-misses,1.02%,466110,100.0,24.73,of all dTLB cache accesses
+3241.0,,dTLB-loads,1.00%,466110,100.0,,
+105.0,,iTLB-load-misses,0.56%,466110,100.0,602.3,of all iTLB cache accesses
+17.0,,iTLB-loads,8.05%,466110,100.0,,
+1082371.0,ns,duration_time,8.65%,1082370,100.0,2235.305,M/sec
+0.48,msec,task-clock,9.01%,484216,100.0,0.447,CPUs utilized
+1543163.0,,cpu-cycles,5.98%,485082,100.0,3.187,GHz
+1629822.0,,instructions,1.64%,485082,100.0,1.06,insn per cycle
+0.0,,bpf-output,0.00%,484216,100.0,0.0,K/sec
+18874.0,,L1-dcache-load-misses,8.76%,452888,100.0,2.75,of all L1-dcache accesses
+686639.0,,L1-dcache-loads,1.05%,452888,100.0,,
+9573.0,,L1-dcache-prefetches,16.45%,452888,100.0,,
+5385.0,,L1-icache-load-misses,2.07%,452888,100.0,1.37,of all L1-icache accesses
+392712.0,,L1-icache-loads,1.10%,452888,100.0,,
+332813.0,,branch-instructions,1.91%,418670,100.0,,
+7894.0,,branch-misses,1.61%,418670,100.0,2.37,of all branches
+7894.0,,branch-load-misses,1.61%,418670,100.0,,
+332867.0,,branch-loads,1.91%,418670,100.0,,

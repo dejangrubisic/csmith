@@ -1,0 +1,29 @@
+,,,,,,,# started on Fri Mar  4 12:12:49 2022
+980458.0,ns,duration_time,3.11%,980458,100.0,2172.353,M/sec
+0.45,msec,task-clock,3.17%,451334,100.0,0.46,CPUs utilized
+1399039.0,,cpu-cycles,4.74%,452132,100.0,3.1,GHz
+1690484.0,,instructions,3.38%,452132,100.0,1.21,insn per cycle
+0.0,,bpf-output,0.00%,451334,100.0,0.0,K/sec
+0.0,,major-faults,0.00%,444846,100.0,,
+53.0,,minor-faults,0.71%,444846,100.0,,
+53.0,,page-faults,0.71%,444846,100.0,,
+23200.0,,cache-misses,1.20%,444916,100.0,23.637,of all cache refs
+98150.0,,cache-references,4.00%,444916,100.0,,
+343159.0,,branch-instructions,3.13%,434016,100.0,,
+8203.0,,branch-misses,0.47%,434016,100.0,2.39,of all branches
+8203.0,,branch-load-misses,0.47%,434016,100.0,,
+343213.0,,branch-loads,3.13%,434016,100.0,,
+802.0,,dTLB-load-misses,1.36%,447980,100.0,24.53,of all dTLB cache accesses
+3267.0,,dTLB-loads,1.92%,447980,100.0,,
+112.0,,iTLB-load-misses,1.22%,447980,100.0,435.94,of all iTLB cache accesses
+26.0,,iTLB-loads,12.39%,447980,100.0,,
+18788.0,,L1-dcache-load-misses,7.28%,430214,100.0,2.65,of all L1-dcache accesses
+707888.0,,L1-dcache-loads,2.92%,430214,100.0,,
+9796.0,,L1-dcache-prefetches,14.42%,430214,100.0,,
+5449.0,,L1-icache-load-misses,1.55%,430214,100.0,1.27,of all L1-icache accesses
+430727.0,,L1-icache-loads,3.91%,430214,100.0,,
+0.0,,alignment-faults,0.00%,478458,100.0,0.0,K/sec
+0.0,,context-switches,0.00%,478458,100.0,0.0,K/sec
+0.48,msec,cpu-clock,10.60%,478458,100.0,0.512,CPUs utilized
+0.0,,cpu-migrations,0.00%,478458,100.0,0.0,K/sec
+0.0,,emulation-faults,0.00%,478458,100.0,0.0,K/sec
