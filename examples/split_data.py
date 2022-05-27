@@ -4,27 +4,46 @@ import os
 import random
 import shutil
 
-def separate_test_data(train_dir, test_dir, test_perc):
+import pdb 
+
+def separate_test_data(train_dir, test_dir, test_size):
     
-    onlyfiles = [f for f in os.listdir(train_dir) if os.path.isfile(os.path.join(train_dir, f))]
+    onlyfiles = sorted([f for f in os.listdir(train_dir) if os.path.isfile(os.path.join(train_dir, f))])
 
-    test_num = int(len(onlyfiles) * test_perc / 100)
-    test_files = random.sample(onlyfiles, test_num)
+    if 0 < test_size and test_size < 1: # percentage
+        test_num = int(len(onlyfiles) * test_size)
+        test_files = random.sample(onlyfiles, test_num)
+    elif 1 <= test_size: # number
+        test_num = int(test_size) # Dont take perc, just take say 20
+    else:
+        print("Test_size must be (0, inf)")
+        exit(1)
 
-    for file in test_files:
-        print(train_dir + '/' + file)
-        shutil.move(train_dir + '/' + file, test_dir + '/' + file)
+
+    prev_group_id = 1
+    i = 0
+    for file in onlyfiles:
+        group_id = int(file.split('_')[0])
+        if group_id == prev_group_id:
+            if i < test_num:
+                i += 1
+                print(train_dir + '/' + file)
+                shutil.move(train_dir + '/' + file, test_dir + '/' + file)
+        else:
+            i = 0
+        prev_group_id = group_id
+
 
 def main():
     
     print(sys.argv)
     if len(sys.argv) != 4:
-        print('Format: split_data.py path_to_data path_to_test percentage')
+        print('Format: split_data.py path_to_data path_to_test test_size')
         return 
 
     train_dir = sys.argv[1]
     test_dir = sys.argv[2]
-    test_perc = int(sys.argv[3])
+    test_size = float(sys.argv[3])
     
     if os.path.exists(test_dir):
         if len(os.listdir(test_dir)) != 0:
@@ -33,7 +52,7 @@ def main():
     else:
         os.makedirs(test_dir)
 
-    separate_test_data(train_dir, test_dir, test_perc)
+    separate_test_data(train_dir, test_dir, test_size)
 
 
 if __name__ == '__main__':

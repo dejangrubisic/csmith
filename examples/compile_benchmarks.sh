@@ -15,14 +15,29 @@ for benchmark in $SOURCE_DIR/*; do
         source_name="${example##*/}"
         exe_name=${source_name%".c"}.exe
         
-        clang $OPT_FLAG -Wno-everything -o $EXE_DIR/$benchmark_name/$exe_name $example 2> /dev/null
+        # clang $OPT_FLAG -Wno-everything -o $EXE_DIR/$benchmark_name/$exe_name $example 2> /dev/null
 
+        clang -Wno-everything -o tmp.ll -S -emit-llvm $example
         if [[ $? -ne '0' ]]; then
-            echo Doesnt compile: $example
-            # rm $example
+            echo Doesnt compile \(clang ll\): $example       
+            continue     
         fi
+
+        opt $OPT_FLAG -o tmp.bc tmp.ll
+        if [[ $? -ne '0' ]]; then
+            echo Doesnt compile \(opt\): $example    
+            continue        
+        fi
+        
+        clang tmp.bc -o $EXE_DIR/$benchmark_name/$exe_name
+        if [[ $? -ne '0' ]]; then
+            echo Doesnt compile \(clang exe\): $example    
+            continue        
+        fi
+
     done
 
+    rm tmp.ll
 done
 
 

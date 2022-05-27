@@ -17,7 +17,7 @@ def main():
     args_list = []
     
     for _ in range(args_len - len(input_args)):
-        arg = random.randrange(0, 100)
+        arg = random.randrange(65, 90)
         input_args.append(str(arg))
 
     for x in input_args:

@@ -71,19 +71,19 @@ def get_pictures(pictures_dir, suffix):
 def main():
     
     print(sys.argv)
-    if len(sys.argv) != 4:
-        print('Format: merge_pictures.py pictures_dir suffix out_file_path')
+    if len(sys.argv) != 5:
+        print('Format: merge_pictures.py how pictures_dir suffix out_file_path')
         return 
 
-    pictures_dir = sys.argv[1]
-    suffix =  sys.argv[2]
-    out_file_path =  sys.argv[3]
+    how = sys.argv[1]
+    pictures_dir = sys.argv[2]
+    suffix =  sys.argv[3]
+    out_file_path =  sys.argv[4]
     file_names = get_pictures(pictures_dir, suffix)
         
-
-    if suffix == 'violin.png':
+    if how == 'vertical':
         merge_vertical(file_names, out_file_path)
-    elif suffix == 'histogram.png':
+    elif how == 'box':
         merge_box(file_names, out_file_path)
     else:
         print('Dont know how to merge')

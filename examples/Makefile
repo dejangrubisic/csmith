@@ -1,5 +1,5 @@
 # Global Benchmark parameters
-BENCH_SIZE := 2
+BENCH_SIZE := 300
 BENCH_LOOP_REPEAT := -1
 BENCH_MAIN_REPEAT := 10
 
@@ -27,10 +27,11 @@ NUM_FUNC_LOW := 2
 CSMITH_DEFAULT_FLAGS := --no-checksum --quiet --concise
 
 # Global Compile parameters
-OPT_FLAGS := -O0
+OPT_FLAGS :=-O3#"--loop-interchange --deadargelim"
 
 # Auxilary functions
 gen_bench = ./generate_benchmark.sh $@ $(BENCH_SIZE) $(BENCH_MAIN_REPEAT) $(BENCH_LOOP_REPEAT) $(BENCH_ARG) 
+delete_incompatible = . ./delete_incompatible_benchmarks.sh
 compile_bench = ./compile_benchmarks.sh $(OPT_FLAGS)
 gen_input = ./gen_input.sh 
 profile_bench = ./profile_benchmarks.sh
@@ -38,7 +39,7 @@ visualize_profiles = ./visualize_profiles.sh
 export ROOT_DIR=$(PWD)
 
 
-BENCHMARKS := #branches loops_short loops_long dense_blas_int dense_blas_float sparse_blas_int sparse_blas_float default
+BENCHMARKS := branches loops_short loops_long dense_blas_int dense_blas_float sparse_blas_int sparse_blas_float default
 TARGETS := $(BENCHMARKS) compile gen_input profile visualize
 
 all: $(TARGETS)
@@ -159,7 +160,12 @@ default:
 	$(call gen_bench)
 
 
+delete_incompatible_benchmarks:
+	$(call delete_incompatible)
 
+delete_incompatible_benchmarks_force:
+	$(eval export SOURCE_DIR_CLEANED=)
+	$(call delete_incompatible)
 
 compile: 
 	$(call compile_bench)
@@ -179,6 +185,8 @@ visualize:
 # Clean routines
 clean_all:
 	rm -rf benchmarks/*
+
+clean: clean_compile clean_profile clean_visualization
 
 clean_source:
 	rm -rf benchmarks/source
