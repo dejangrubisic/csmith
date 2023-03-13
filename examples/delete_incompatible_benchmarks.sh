@@ -1,7 +1,7 @@
 #!/bin/bash
 
 BENCHMARK_PATH=$1
-
+BENCHMARK_HEADER_PATH=$1/../
 
 if [[ -z "${SOURCE_DIR_CLEANED}" ]]; then
     echo Clean SOURCE_DIR     
@@ -13,7 +13,7 @@ fi
 
 
 SOURCE_DIR=$PWD/benchmarks/source
-FILE_IN=$PWD/benchmarks/in.txt
+FILE_IN=$PWD/benchmarks_archive/poj104_benchmarks/in.txt
 
 if test -f "$FILE_IN"; then
     FILE_IN="< "$FILE_IN
@@ -24,35 +24,57 @@ fi
 
 delete_incompatible_example(){
     example=$1
-    clang -O0 -Wno-everything $example 2> /dev/null
+    exe=$2
+    echo $example
 
-        if [[ $? -ne '0' ]]; then
-            echo Doesnt compile: $example
-            rm $example
-            continue
-        fi
+    clang -o $exe -O0 -Wno-everything $example -I $BENCHMARK_HEADER_PATH 2> /dev/null
 
-        timeout 5 a.out $FILE_IN 1> /dev/null
-        status=$?
-        if [[ $status -ne 0 ]]; then
-            echo "Doesnt run. Status: $status, Bad command: $example"
-            rm $example
-            continue
-        fi
+    if [[ $? -ne '0' ]]; then
+        echo Doesnt compile: $example
+        rm $example
+        return
+    fi
 
-        echo "All good"
+    # cmd="timeout 10 a.out $FILE_IN 1> /dev/null"
+    cmd="timeout 10 $exe 1> /dev/null"
+    eval $cmd
+
+    status=$?
+    if [[ $status -ne 0 ]]; then
+        echo "Doesnt run. Status: $status, Bad command: $example"
+        rm $example
+        return
+    fi
+
+    echo "All good"
 }
 
 delete_incompatible_examples(){
+    parallel=30
+
     benchmark=$1
     echo $benchmark
     benchmark_name="${benchmark##*/}"    
 
+    i=0
     for example in $benchmark/*; do        
-        delete_incompatible_example $example
+        delete_incompatible_example $example a$i.out &
+        pids[${i}]=$!
+        i=$((i+1))
+
+        if [ $(($i % $parallel)) -eq 0 ];then
+            # wait for all pids
+            for pid in ${pids[*]}; do
+                wait $pid
+            done
+            i=0
+        fi
+    done
+
+    for ((i=0;i<$parallel;i++)); do
+        rm a$i.out
     done
 }
-
 
 
 if [[ -z "${BENCHMARK_PATH}" ]]; then

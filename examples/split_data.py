@@ -19,11 +19,11 @@ def separate_test_data(train_dir, test_dir, test_size):
         print("Test_size must be (0, inf)")
         exit(1)
 
-
-    prev_group_id = 1
+    breakpoint()
+    prev_group_id = str(onlyfiles[0].split('_')[0])
     i = 0
     for file in onlyfiles:
-        group_id = int(file.split('_')[0])
+        group_id = str(file.split('_')[0])
         if group_id == prev_group_id:
             if i < test_num:
                 i += 1
